@@ -1,4 +1,4 @@
-package com.taike.controller;
+package com.taike.web.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

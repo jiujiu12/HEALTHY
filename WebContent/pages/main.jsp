@@ -1,3 +1,5 @@
+<%@page import="com.taike.domain.Product"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -184,96 +186,35 @@
 				</div>
 			</div>
 		</section>
+		
 		<section class="scroll-floor floor-2">
 			<div class="floor-title">
-				<i class="iconfont icon-fushi fz16"></i> 医疗卫生
+				<i class="iconfont icon-fushi fz16"></i> list.stype
 			</div>
 			<div class="con-box">
 				<div class="">
+				<%
+					List<Product> list=(List<Product>)request.getAttribute("products"); 
+					for(Product p:list){
+						String imgurl=p.getSimgpath();
+						String name=p.getSname();
+					%>
 					<a href="item_show.html" class="floor-item">
 							<div class="item-img hot-img">
-								<img src="images/01ws.jpg" alt="N95口罩" class="cover">
+								<img src="<%=imgurl%>" alt="<%=name%>" class="cover">
 							</div>
 							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
+								<span class="pull-left cr fz16">￥<%=p.getSprice() %></span>
 								<span class="pull-right c6"></span>
 							</div>
-							<div class="name ep" title="N95口罩">一次性纱布</div>
+							<div class="name ep" title=""><%=p.getSname() %></div>
 						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/02ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">N95口罩</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/03ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">健康礼包</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/04ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">医用外科口罩四只装</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/01ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">一次性纱布</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/02ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">N95口罩</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/03ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">健康礼包</div>
-						</a>
-					<a href="item_show.html" class="floor-item">
-							<div class="item-img hot-img">
-								<img src="images/04ws.jpg" alt="N95口罩" class="cover">
-							</div>
-							<div class="price clearfix">
-								<span class="pull-left cr fz16">￥18.0</span>
-								<span class="pull-right c6"></span>
-							</div>
-							<div class="name ep" title="N95口罩">医用外科口罩四只装</div>
-						</a>
+					<%} %>
 				</div>
 			</div>
+			
 		</section>
-		<section class="scroll-floor floor-3">
+		<!-- <section class="scroll-floor floor-3">
 			<div class="floor-title">
 				<i class="iconfont icon-kid fz16"></i> 健身器材
 			</div>
@@ -363,7 +304,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="scroll-floor floor-4">
+		<section class="scroll-floor floor-4"> -->
 			<div class="floor-title">
 				<i class="iconfont icon-shoes fz16"></i> 送药上门
 			</div>

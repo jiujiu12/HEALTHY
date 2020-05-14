@@ -9,4 +9,26 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+    <listener-class>
+		com.taike.web.listener.MyAttributeListener
+	 </listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>com.taike.web.servlet.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/MyServlet</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>MyFilter</display-name>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>com.taike.web.filter.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/MyServlet</url-pattern>
+  </filter-mapping>
 </web-app>
