@@ -27,6 +27,7 @@ public class ProductDao {
 											rs.getDouble(3),rs.getInt(4),
 											rs.getString(5),rs.getString(6)));
 				}
+				JDBCUtils.release(ps,conn);
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
